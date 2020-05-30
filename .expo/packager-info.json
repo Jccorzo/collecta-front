@@ -2,5 +2,8 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 9681
+  "packagerPid": 24152,
+  "expoServerNgrokUrl": "https://88-3ad.style-app.collecta-front.exp.direct",
+  "packagerNgrokUrl": "https://packager.88-3ad.style-app.collecta-front.exp.direct",
+  "ngrokPid": 17756
 }
