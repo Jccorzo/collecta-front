@@ -1,7 +1,6 @@
-import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { FlatList, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import Product from '../components/Product';
+import Product from '../components/Product'
 import TouchableImage from '../components/TouchableImage';
 
 export default function HomeScreen({navigation}) {
@@ -37,7 +36,7 @@ export default function HomeScreen({navigation}) {
     }
   ]
   return (
-    <>
+    
     <FlatList style={{backgroundColor:"#FFFFFF", marginTop:10}}
               data={products}
               renderItem={({ item }) => <Product product={item}/> }
@@ -45,9 +44,7 @@ export default function HomeScreen({navigation}) {
               numColumns={2}
               horizontal={false}
               columnWrapperStyle={{justifyContent:'center'}} 
-          />
-          <TouchableImage func={()=>{navigation.navigate('Buy')}}/>
-          </>
+          />         
   );
 }
 

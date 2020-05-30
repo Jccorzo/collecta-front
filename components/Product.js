@@ -6,14 +6,13 @@ import { View , Text, StyleSheet, Dimensions, Image } from 'react-native';
 var { height, width } = Dimensions.get('window');
 
 export default function Product({product}) {
-
     return (
         <View style={styles.container}>
             <View style={{alignItems: 'center', marginBottom: 10, marginTop: 20}}>
                 <Image
                     style={{ borderTopRightRadius:20, borderBottomRightRadius:20,
                     borderTopLeftRadius:20, borderBottomLeftRadius:20 }}
-                    source={require('../assets/images/Mango.png')}
+                    source={product.url}
                 /> 
             </View>
            <View style={styles.columnItems}>     
