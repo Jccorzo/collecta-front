@@ -13,7 +13,7 @@ export default function Product({product}) {
                 <Image
                     style={{ borderTopRightRadius:20, borderBottomRightRadius:20,
                     borderTopLeftRadius:20, borderBottomLeftRadius:20 }}
-                    source={require('../assets/images/Mango.png')}
+                    source={require(product.url)}
                 /> 
             </View>
            <View style={styles.columnItems}>     
