@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
-import { Button, Text, SocialIcon } from 'react-native-elements';
+import { Button, Text } from 'react-native-elements';
 
 var { height } = Dimensions.get('window');
 
@@ -16,18 +16,15 @@ export default function WelcomeScreen({ navigation }) {
           title={'Registrarme'}
           onPress={() => navigation.navigate('SignUp')}
           buttonStyle={styles.button1}
-          titleStyle={{fontFamily: 'spartan-regular'}}
+          titleStyle={{fontFamily: 'roboto-regular'}}
         />
         <Button
           title={'Iniciar sesión'}
           onPress={() => navigation.navigate('SignIn')}
           buttonStyle={styles.button2}
-          titleStyle={{ color: '#FF8000', fontFamily: 'spartan-regular' }}
+          titleStyle={{ color: '#FF8000', fontFamily: 'roboto-regular' }}
         />
       </View>
-      <SocialIcon
-        type='facebook'
-      />
     </View>
   );
 }
@@ -43,7 +40,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     color: '#707070',
-    fontFamily: 'spartan-regular',
+    fontFamily: 'roboto-regular',
   },
   button1: {
     width: 251,

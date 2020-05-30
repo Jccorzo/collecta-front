@@ -72,7 +72,7 @@ export default function SignUpScreen ({ navigation }){
                       style={{width:175, height:105}}
                       source={ require('../assets/images/log-in-image.png')}
                       />
-                      <Text style={{fontSize:24, color: '#707070', bottom: 20, fontFamily: 'spartan-regular'}}>Registro</Text>
+                      <Text style={{fontSize:24, color: '#707070', bottom: 20, fontFamily: 'roboto-regular'}}>Registro</Text>
                   </View>
                   <View style={styles.inputBox}> 
                     <TextInput
@@ -172,7 +172,7 @@ export default function SignUpScreen ({ navigation }){
           borderBottomWidth: 2,
           borderBottomColor: '#707070',
           fontSize: 16,
-          fontFamily: 'spartan-regular',
+          fontFamily: 'roboto-regular',
           color:'#707070',
           zIndex:-1
         }

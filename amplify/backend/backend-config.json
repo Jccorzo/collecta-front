@@ -1,6 +1,6 @@
 {
 	"auth": {
-		"collectafront4cf6c3dd": {
+		"collectafront3ecd8b07": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [],

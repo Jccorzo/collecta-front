@@ -45,11 +45,11 @@ export default function ConfirmCodeScreen() {
                       style={{width:168, height:100}}
                       source={ require('../assets/images/log-in-image.png')}
                     />
-                    <Text style={{fontSize:24, color: '#707070', paddingBottom: 15, fontFamily: 'spartan-regular'}}>Iniciar sesión</Text>
+                    <Text style={{fontSize:24, color: '#707070', paddingBottom: 15, fontFamily: 'roboto-regular'}}>Iniciar sesión</Text>
                 </View>
                 <View style={styles.box}>
                     <View>
-                        <Text style={{textAlign:'center', width:260, fontSize:12, color:'#707070', fontFamily: 'spartan-regular'}}>Introduce el código que ha sido enviado a tu correo electrónico</Text>
+                        <Text style={{textAlign:'center', width:260, fontSize:12, color:'#707070', fontFamily: 'roboto-regular'}}>Introduce el código que ha sido enviado a tu correo electrónico</Text>
                     </View>
                     <View style={{flexDirection:'row', justifyContent:'space-between'}}>
                         <TextInput
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         margin: 2,
         textAlign: "center",
-        fontFamily: 'spartan-bold'
+        fontFamily: 'roboto-bold'
     },
     focusInput: {
         width: 44,
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 36,
         color: '#FF8000',
-        fontFamily: 'spartan-bold'
+        fontFamily: 'roboto-bold'
     },
     thirdInput: {
         width: 44,
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
         margin: 2,
         marginRight: 10,
         textAlign: "center",
-        fontFamily: 'spartan-bold'
+        fontFamily: 'roboto-bold'
     },
     thirdFocusInput: {
         width: 44,
@@ -191,12 +191,12 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 36,
         color: '#FF8000',
-        fontFamily: 'spartan-bold'
+        fontFamily: 'roboto-bold'
     },
     passButton: {
       fontSize: 12,
       color: "#707070",
       textDecorationLine: 'underline',
-      fontFamily: 'spartan-regular'
+      fontFamily: 'roboto-regular'
     },   
   });

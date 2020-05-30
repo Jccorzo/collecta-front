@@ -28,9 +28,6 @@ async function uSignIn(username, password) {
 
 var { height } = Dimensions.get('window');
 
-var box_count = 4;
-var box_height = height / box_count;
-
 export default function SignInScreen() {
 
   const context = React.useContext(AuthContext);
@@ -57,9 +54,8 @@ export default function SignInScreen() {
         <View style={[styles.box, {height:height*0.4, justifyContent:'space-evenly', alignItems: 'center'}]}>
           <Image
             style={{ width: 175, height: 105 }}
-            source={require('../assets/images/log-in-image.png')}
           />
-          <Text style={styles.text}>Iniciar Sesión</Text>
+          <Text style={styles.text}>Bienvenidos</Text>
         </View>
         <View style={styles.box}>
           <View>
@@ -113,7 +109,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 24,
     color: '#707070',
-    fontFamily: 'spartan-regular'
+    fontFamily: 'roboto-bold'
   },
   input: {
     width: 270,
@@ -122,12 +118,12 @@ const styles = StyleSheet.create({
     borderBottomColor: '#707070',
     borderColor: 'black',
     fontSize: 16,
-    fontFamily: 'spartan-regular',
+    fontFamily: 'roboto-regular',
     color: '#707070'
   },
   passButton: {
     color: "#B8B5B5",
     textDecorationLine: 'underline',
-    fontFamily: 'spartan-regular'
+    fontFamily: 'roboto-regular'
   }
 });
