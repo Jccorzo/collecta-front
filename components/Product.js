@@ -1,12 +1,14 @@
 import * as React from 'react';
 
 import { View , Text, StyleSheet, Dimensions, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 var { height, width } = Dimensions.get('window');
 
-export default function Product({product}) {
+export default function Product({product, func}) {
     return (
+        <TouchableOpacity onPress={func}>
         <View style={styles.container}>
             <View style={{alignItems: 'center', marginBottom: 10, marginTop: 20}}>
                 <Image
@@ -17,10 +19,11 @@ export default function Product({product}) {
             </View>
            <View style={styles.columnItems}>     
              <Text style={styles.title}>{product.name}</Text>
-             <Text style={styles.text} >{product.quantity}</Text>
+             <Text style={styles.text} >{product.price}</Text>
              <Text style={styles.light}>{product.info}</Text>     
            </View>
         </View>
+        </TouchableOpacity>
     );
 }
 

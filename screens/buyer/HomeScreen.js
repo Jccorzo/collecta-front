@@ -10,28 +10,32 @@ export default function HomeScreen({navigation}) {
     {
       id: '1',
       name: 'Mango tommy',
-      quantity: '$5.000 x Kilogramo',
+      price: 5000,
+      unit: 'Kilogramo',
       url: require('../../assets/images/Mango.png'),
       info: 'Nuevo producto'
     },
     {
       id: '2',
       name: 'Mora',
-      quantity: '$3.500 x Kilogramo',
+      price: 3500,
+      unit: 'Kilogramo',
       url: require('../../assets/images/Mora.png'),
       info: 'antes $4.000 x Kilo'
     },
     {
       id: '3',
       name: 'Manzana',
-      quantity: '$5.000 x Kilogramo',
+      price: 5000,
+      unit: 'Kilogramo',
       url: require('../../assets/images/Manzana.png'),
       info: 'antes $7.500 x Kilo'
     },
     {
       id: '4',
       name: 'Pera',
-      quantity: '$5.000 x Kilogramo',
+      price: 5000,
+      unit: 'Kilogramo',
       url: require('../../assets/images/Manzana.png'),
       info: 'antes $9.500 x Kilo'
     }
