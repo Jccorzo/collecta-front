@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FlatList } from 'react-native';
-import Product from '../../components/Product';
+import { ProductToBuy } from '../../components/Product';
 export default function BuyScreen({navigation}){
     let products=[
         {
@@ -39,7 +39,7 @@ export default function BuyScreen({navigation}){
     return(
         <FlatList style={{backgroundColor:"#FFFFFF", marginTop:10}}
         data={products}
-        renderItem={({ item }) => <Product product={item} func={()=>{navigation.navigate('Detail',item)}}/> }
+        renderItem={({ item }) => <ProductToBuy product={item} func={()=>{navigation.navigate('Detail',item)}}/> }
         keyExtractor={item => item.id}
         numColumns={2}
         horizontal={false}

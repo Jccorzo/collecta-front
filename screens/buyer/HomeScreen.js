@@ -2,7 +2,7 @@ import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { Platform, StyleSheet, FlatList } from 'react-native';
 import TouchableImage from '../../components/TouchableImage';
-import Product from '../../components/Product';
+import { ProductToBuy } from '../../components/Product';
 
 
 export default function HomeScreen({navigation}) {
@@ -44,7 +44,7 @@ export default function HomeScreen({navigation}) {
     <>
     <FlatList style={{backgroundColor:"#FFFFFF", marginTop:10}}
               data={products}
-              renderItem={({ item }) => <Product product={item}/> }
+              renderItem={({ item }) => <ProductToBuy product={item}/> }
               keyExtractor={item => item.id}
               numColumns={2}
               horizontal={false}

@@ -6,7 +6,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 var { height, width } = Dimensions.get('window');
 
-export default function Product({product, func}) {
+function ProductToBuy({product, func}) {
     return (
         <TouchableOpacity onPress={func}>
         <View style={styles.container}>
@@ -26,6 +26,16 @@ export default function Product({product, func}) {
         </TouchableOpacity>
     );
 }
+
+function BoughtProduct(){
+    return(
+        <View>
+            <Text>hola</Text>
+        </View>
+    );
+}
+
+export {ProductToBuy, BoughtProduct};
 
 const styles = StyleSheet.create({
     container: {
