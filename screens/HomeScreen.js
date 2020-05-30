@@ -1,15 +1,49 @@
 import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import MangoTommy from '../components/MangoTommy';
+import { FlatList, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Product from '../components/Product';
 
 export default function HomeScreen() {
+
+  let products=[
+    {
+      id: '1',
+      name: 'Mango tommy',
+      quantity: '$5.000 x Kilogramo',
+      url: '../assets/images/Mango.png',
+      info: 'Nuevo producto'
+    },
+    {
+      id: '2',
+      name: 'Mora',
+      quantity: '$3.500 x Kilogramo',
+      url: '../assets/images/Mora.png',
+      info: 'antes $4.000 x Kilo'
+    },
+    {
+      id: '3',
+      name: 'Manzana',
+      quantity: '$5.000 x Kilogramo',
+      url: '../assets/images/Manzana.png',
+      info: 'antes $7.500 x Kilo'
+    },
+    {
+      id: '4',
+      name: 'Pera',
+      quantity: '$5.000 x Kilogramo',
+      url: '../assets/images/Manzana.png',
+      info: 'antes $9.500 x Kilo'
+    }
+  ]
   return (
-    <View style={styles.container}>
-      <View>
-              <MangoTommy numeroPedido={'1546669'} nombre={'MangoTommy'} cantidad={'8 Toneladas'} fecha={'15 jul 2020'}/>
-      </View>
-    </View>
+    <FlatList style={{backgroundColor:"#FFFFFF", marginTop:10}}
+              data={products}
+              renderItem={({ item }) => <Product product={item}/> }
+              keyExtractor={item => item.id}
+              numColumns={2}
+              horizontal={false}
+              columnWrapperStyle={{justifyContent:'center'}} 
+          />
   );
 }
 
