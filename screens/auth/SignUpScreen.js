@@ -2,9 +2,9 @@ import  React, { useState, useContext } from 'react';
 import { Auth } from 'aws-amplify';
 import { Text } from 'react-native-elements';
 import { ScrollView ,View, TextInput, StyleSheet, Image, Dimensions} from 'react-native';
-import { AuthContext }  from '../AuthProvider';
-import ButtonWithState from '../components/ButtonWithState';
-import { DropdownList, DropdownButton } from '../components/Dropdown';
+import { AuthContext }  from '../../AuthProvider';
+import ButtonWithState from '../../components/ButtonWithState';
+import { DropdownList, DropdownButton } from '../../components/Dropdown';
 
 
 
@@ -70,7 +70,7 @@ export default function SignUpScreen ({ navigation }){
                   <View style={styles.box}>
                       <Image
                       style={{width:175, height:105}}
-                      source={ require('../assets/images/log-in-image.png')}
+                      
                       />
                       <Text style={{fontSize:24, color: '#707070', bottom: 20, fontFamily: 'roboto-regular'}}>Registro</Text>
                   </View>

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
 import { ScrollView , View, Image, TextInput, StyleSheet, Dimensions, TouchableWithoutFeedback, Keyboard } from 'react-native';
-import { AuthContext } from '../AuthProvider';
+import { AuthContext } from '../../AuthProvider';
 import { Text } from 'react-native-elements';
-import TouchableText from '../components/TouchableText';
-import ButtonWithState from '../components/ButtonWithState';
+import TouchableText from '../../components/TouchableText';
+import ButtonWithState from '../../components/ButtonWithState';
 
 
 async function uSignIn(username, password) {

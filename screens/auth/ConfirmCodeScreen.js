@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, StyleSheet, TextInput, Image, Text, Dimensions } from 'react-native';
-import TouchableText from '../components/TouchableText';
-import ButtonWithState from '../components/ButtonWithState';
+import TouchableText from '../../components/TouchableText';
+import ButtonWithState from '../../components/ButtonWithState';
 
 var { height } = Dimensions.get('window');
  
@@ -43,7 +43,7 @@ export default function ConfirmCodeScreen() {
                 <View style={styles.box}>
                     <Image
                       style={{width:168, height:100}}
-                      source={ require('../assets/images/log-in-image.png')}
+                      
                     />
                     <Text style={{fontSize:24, color: '#707070', paddingBottom: 15, fontFamily: 'roboto-regular'}}>Iniciar sesión</Text>
                 </View>

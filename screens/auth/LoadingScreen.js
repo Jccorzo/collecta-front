@@ -54,7 +54,7 @@ export default function LoadingScreen({style}) {
         <View style={{...styles.container, ...style}}>
           <Image
           style={{height:height*.8, width:width}}
-          source={require('../assets/images/log-in-image.png')}
+          
           resizeMode={'center'}
           />
           <View style={{flexDirection:'row', justifyContent:'space-evenly', width:60}}>
