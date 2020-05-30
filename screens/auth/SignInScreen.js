@@ -58,32 +58,31 @@ export default function SignInScreen() {
           <Text style={styles.text}>Bienvenidos</Text>
         </View>
         <View style={styles.box}>
-          <View>
+         
             <TextInput
               value={username}
               onChangeText={setUsername}
               returnKeyType={'next'}
               placeholder={'Correo electrónico'}
-              style={[ styles.input, focusU || username.length > 0 ? {borderBottomColor: '#FF8000'} : {}]}
+              style={[ styles.input, focusU || username.length > 0 ? {borderColor: '#FF8000'} : {}]}
               autoFocus={true}
               onSubmitEditing={focusSecondTextInput}
               onFocus={() => setFocusU(true)}
               onBlur={() => setFocusU(false)}
             />
-            <Text style={{ color: '#D5D4D4', fontSize: 10 }}>Ej:Jhon.Doe@gmail.com</Text>
-          </View>
-          <View>
+          
+          
             <TextInput
               value={password}
               ref={secondTextInputRef}
               onChangeText={setPassword}
               placeholder={'Contraseña'}
               secureTextEntry={true}
-              style={[styles.input, focusP || password.length > 0 ? {borderBottomColor: '#FF8000'} : {}]}
+              style={[styles.input, focusP || password.length > 0 ? {borderColor: '#FF8000'} : {}]}
               onFocus={() => setFocusP(true)}
               onBlur={() => setFocusP(false)}
             />
-          </View>
+          
 
         </View>
         <TouchableText textStyle={styles.passButton} text={'Olvidaste tu contraseña'}/>
@@ -108,18 +107,19 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 24,
-    color: '#707070',
+    color: '#FFBB00',
     fontFamily: 'roboto-bold'
   },
   input: {
+    borderRadius: 20,
+    padding:18,
     width: 270,
-    height: 24,
-    borderBottomWidth: 2,
-    borderBottomColor: '#707070',
-    borderColor: 'black',
-    fontSize: 16,
+    height: 50,
+    borderWidth: 1,
+    borderColor: '#00000029',
+    fontSize: 14,
     fontFamily: 'roboto-regular',
-    color: '#707070'
+    color: '#FFBB00'
   },
   passButton: {
     color: "#B8B5B5",

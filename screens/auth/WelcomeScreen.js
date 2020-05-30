@@ -10,7 +10,7 @@ var box_height = height / box_count;
 export default function WelcomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Bienvenido</Text>
+      <Text style={styles.text}>Te damos la bienvenida</Text>
       <View style={styles.box}>
         <Button
           title={'Registrarme'}
@@ -22,7 +22,7 @@ export default function WelcomeScreen({ navigation }) {
           title={'Iniciar sesión'}
           onPress={() => navigation.navigate('SignIn')}
           buttonStyle={styles.button2}
-          titleStyle={{ color: '#FF8000', fontFamily: 'roboto-regular' }}
+          titleStyle={{ color: '#FFBB00', fontFamily: 'roboto-regular' }}
         />
       </View>
     </View>
@@ -39,13 +39,13 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 24,
-    color: '#707070',
+    color: '#FFBB00',
     fontFamily: 'roboto-regular',
   },
   button1: {
     width: 251,
     height: 50,
-    backgroundColor: "#FF8000",
+    backgroundColor: "#FFBB00",
     borderRadius: 30,
   },
   button2: {
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     borderRadius: 30,
     borderWidth: 1.5,
-    borderColor: "#FF8000",
+    borderColor: "#FFBB00",
   },
   box: {
     height: box_height,

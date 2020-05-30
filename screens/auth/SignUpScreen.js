@@ -29,7 +29,7 @@ export default function SignUpScreen ({ navigation }){
   const [ lastname, setLastname ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ cel, setCel ] = useState('');
-  const [ gender, setGender ] = useState('Genero');
+  const [ gender, setGender ] = useState('Tipo de documento');
   const [ password, setPassword ] = useState('');
   const [ confirmPassword, setConfirmPassword ] = useState('');
 
@@ -78,7 +78,7 @@ export default function SignUpScreen ({ navigation }){
                     <TextInput
                         placeholder={'Nombre'}
                         value={name}
-                        style={[styles.input, focusN || name.length>0  ? {borderBottomColor: '#FF8000'}:{}]}
+                        style={[styles.input, focusN || name.length>0  ? {borderColor: '#FF8000'}:{}]}
                         returnKeyType={'next'}
                         onChangeText={setName}
                         onSubmitEditing={focusSecondTextInput} 
@@ -90,7 +90,7 @@ export default function SignUpScreen ({ navigation }){
                         ref={secondTextInputRef}
                         placeholder={'Apellido'}
                         value={lastname}
-                        style={[styles.input, focusL || lastname.length>0  ? {borderBottomColor: '#FF8000'}:{}]}
+                        style={[styles.input, focusL || lastname.length>0  ? {borderColor: '#FF8000'}:{}]}
                         returnKeyType={'next'}
                         onChangeText={setLastname}
                         onSubmitEditing={focusThirdTextInput}
@@ -100,7 +100,7 @@ export default function SignUpScreen ({ navigation }){
                     <TextInput
                         ref={thirdTextInputRef}
                         value={email}
-                        style={[styles.input, focusE || email.length>0  ? {borderBottomColor: '#FF8000'}:{}]}
+                        style={[styles.input, focusE || email.length>0  ? {borderColor: '#FF8000'}:{}]}
                         onChangeText={setEmail}
                         returnKeyType={'next'}
                         placeholder={'Correo Electrónico'}
@@ -111,7 +111,7 @@ export default function SignUpScreen ({ navigation }){
                     <TextInput
                         ref={fourthTextInputRef}
                         value={cel}
-                        style={[styles.input, focusC || cel.length>0  ? {borderBottomColor: '#FF8000'}:{}]}
+                        style={[styles.input, focusC || cel.length>0  ? {borderColor: '#FF8000'}:{}]}
                         onChangeText={setCel}
                         returnKeyType={'next'}
                         maxLength={11}
@@ -121,12 +121,12 @@ export default function SignUpScreen ({ navigation }){
                         onBlur={()=>setFocusC(false)}
                     />
                     <View style={{alignItems:'center'}}>
-                      <DropdownButton func={()=>{setVisible(true)}} text={gender} styles={[gender=='Genero' ? {borderBottomColor: '#707070'}:{}, {width:266}]}/>
+                      <DropdownButton func={()=>{setVisible(true)}} text={gender} styles={[gender=='Tipo de documento' ? {borderColor: '#00000029'}:{}, {width:266}]}/>
                       <DropdownList visible={visible} data={genders} func={(gender)=>{selectGender(gender)}}/> 
                     </View>
                     <TextInput
                         value={password}
-                        style={[styles.input, focusP || password.length>0  ? {borderBottomColor: '#FF8000'}:{}]}
+                        style={[styles.input, focusP || password.length>0  ? {borderColor: '#FF8000'}:{}]}
                         onChangeText={setPassword}
                         placeholder={'Contraseña'}
                         onSubmitEditing={focusSeventhTextInput}
@@ -138,7 +138,7 @@ export default function SignUpScreen ({ navigation }){
                         value={confirmPassword}
                         onChangeText={setConfirmPassword}
                         placeholder={'Confirmar Contraseña'}
-                        style={[styles.input, focusCp || confirmPassword.length>0  ? {borderBottomColor: '#FF8000'}:{}]}
+                        style={[styles.input, focusCp || confirmPassword.length>0  ? {borderColor: '#FF8000'}:{}]}
                         onFocus={()=>setFocusCp(true)}
                         onBlur={()=>setFocusCp(false)}
                       />
@@ -168,12 +168,14 @@ export default function SignUpScreen ({ navigation }){
         },
         input: {
           width: 266,
-          height: 38,
-          borderBottomWidth: 2,
-          borderBottomColor: '#707070',
+          height: 50,
+          borderRadius: 20,
+          padding:18,
+          borderWidth: 1,
+          borderColor: '#00000029',
           fontSize: 16,
           fontFamily: 'roboto-regular',
-          color:'#707070',
+          color:'#FFBB00',
           zIndex:-1
         }
       });

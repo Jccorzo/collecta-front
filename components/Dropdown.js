@@ -63,9 +63,10 @@ const buttonStyles = StyleSheet.create({
     row:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        borderBottomWidth:2,
-        borderBottomColor: '#FF8000',
-        paddingBottom:4
+        borderWidth:1,
+        borderColor: '#FF8000',
+        padding:18,
+        borderRadius:20
     }
 })
 
