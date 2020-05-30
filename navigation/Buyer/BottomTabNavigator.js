@@ -9,16 +9,14 @@ import BuyNavigator from '../Buyer/BuyNavigator';
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
 
-export default function BottomTabNavigator({ navigation, route }) {
-  // Set the header title on the parent stack navigator depending on the
-  // currently active tab. Learn more in the documentation:
-  // https://reactnavigation.org/docs/en/screen-options-resolution.html
-  //navigation.setOptions({ headerTitle: getHeaderTitle(route) });
+export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME} 
       tabBarOptions={{
-        showLabel:false, 
+        showLabel:false,
+        tabStyle:{borderTopLeftRadius:30,
+          borderTopRightRadius:30,}, 
         style:{borderTopLeftRadius:30,
               borderTopRightRadius:30,
               shadowColor: "#00000029",

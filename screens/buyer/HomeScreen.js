@@ -1,11 +1,14 @@
 import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { Platform, StyleSheet, View } from 'react-native';
+import TouchableImage from '../../components/TouchableImage';
 
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
   return (
-    <View></View>
+    <View>
+      <TouchableImage func={()=>{navigation.navigate('Buy')}}/>
+    </View>
   );
 }
 
