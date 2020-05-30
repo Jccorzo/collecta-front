@@ -1,1 +1,0 @@
-{"ast":null,"code":"var awsmobile = {};\nexport default awsmobile;","map":{"version":3,"sources":["C:/Users/d.ocampo/Documents/Collecta/collecta-front/aws-exports.js"],"names":["awsmobile"],"mappings":"AAAA,IAAMA,SAAS,GAAG,EAAlB;AAIA,eAAeA,SAAf","sourcesContent":["const awsmobile = {\r\n\r\n};\r\n\r\nexport default awsmobile;"]},"metadata":{},"sourceType":"module"}
