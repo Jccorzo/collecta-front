@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-collecta-front-dev-101213-authRole",
+            "UnauthRoleArn": "arn:aws:iam::217916976600:role/amplify-collecta-front-dev-101213-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::217916976600:role/amplify-collecta-front-dev-101213-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-collecta-front-dev-101213-deployment",
+            "UnauthRoleName": "amplify-collecta-front-dev-101213-unauthRole",
+            "StackName": "amplify-collecta-front-dev-101213",
+            "StackId": "arn:aws:cloudformation:us-east-1:217916976600:stack/amplify-collecta-front-dev-101213/f2ec0460-a287-11ea-9699-12f4ed1177e6",
+            "AmplifyAppId": "d37slyokd9ztwp"
+        },
+        "categories": {
+            "auth": {
+                "collectafront4cf6c3dd": {}
+            }
+        }
+    }
+}

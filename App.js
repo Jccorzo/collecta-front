@@ -1,36 +1,55 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import * as React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import React from 'react';
+import { SplashScreen, AppLoading } from 'expo';
+import Amplify from 'aws-amplify';
+import * as Font from 'expo-font';
+import {Asset} from 'expo-asset';
 
-import useCachedResources from './hooks/useCachedResources';
-import BottomTabNavigator from './navigation/BottomTabNavigator';
-import LinkingConfiguration from './navigation/LinkingConfiguration';
+import awsconfig from './aws-exports'; 
 
-const Stack = createStackNavigator();
+import AuthProvider from './AuthProvider';
+import AppNavigator from './navigation/AppNavigator';
 
-export default function App(props) {
-  const isLoadingComplete = useCachedResources();
+Amplify.configure(awsconfig);
 
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="dark-content" />}
-        <NavigationContainer linking={LinkingConfiguration}>
-          <Stack.Navigator>
-            <Stack.Screen name="Root" component={BottomTabNavigator} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </View>
+export default function App(){
+  const [isReady, setIsReady] = React.useState(false);
+
+const loadFontsAsync = async () => {
+  await Font.loadAsync({
+    'roboto-light': require('./assets/fonts/RobotoSlab-Light.ttf'),
+    'roboto-regular': require('./assets/fonts/RobotoSlab-Regular.ttf'),
+    'roboto-bold': require('./assets/fonts/RobotoSlab-Bold.ttf'),
+    'roboto-black': require('./assets/fonts/RobotoSlab-Black.ttf'),
+    })
+}
+
+/* const loadImagesAsync = async () => {
+  const images = [require('./assets/images/splash2.png'),
+                  require('./assets/images/DefaultBarberImage.png'),
+                  require('./assets/images/log-in-image.png')]
+
+      const cacheImages = images.map(image => {return Asset.fromModule(image).downloadAsync();}); 
+    await Promise.all(cacheImages)                
+}
+ */
+const loadResourcesAndDataAsync = async () => {
+  await Promise.all([loadFontsAsync(), /* loadImagesAsync() */])
+}   
+  
+   React.useEffect(() => {
+    SplashScreen.preventAutoHide();  
+    loadResourcesAndDataAsync().then(()=>{setIsReady(true)}).catch(e=>console.warn(e));
+    SplashScreen.hide();
+  }, []); 
+
+  if(!isReady){
+    return null
+  }else {
+    return(
+      <AuthProvider>
+        <AppNavigator/>
+      </AuthProvider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
+ 
