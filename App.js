@@ -8,6 +8,7 @@ import awsconfig from './aws-exports';
 
 import AuthProvider from './AuthProvider';
 import AppNavigator from './navigation/AppNavigator';
+import { View } from 'react-native';
 
 Amplify.configure(awsconfig);
 
