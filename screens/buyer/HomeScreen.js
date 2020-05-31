@@ -1,10 +1,13 @@
 import * as React from 'react';
-import { StyleSheet, FlatList, Text, View, Dimensions } from 'react-native';
+import { StyleSheet, FlatList, Text, View, ScrollView } from 'react-native';
 import TouchableImage from '../../components/TouchableImage';
 import { BoughtProduct } from '../../components/Product';
-import { ScrollView } from 'react-native-gesture-handler';
+import {AuthContext} from '../../AuthProvider';
 
 export default function HomeScreen({navigation}) {
+
+  const context = React.useContext(AuthContext);
+  (function (){console.log(context)})()
   let orders=[
     {
       id: '1',

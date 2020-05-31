@@ -1,10 +1,15 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions, Image, StyleSheet } from 'react-native';
+import { Button } from 'react-native-elements';
 
-export default function Confirmcreen(){
+var { height, width } = Dimensions.get('window');
+
+export default function Confirmcreen({navigation}){
     return(
-        <View>
-            <Text>ConfirmScreen</Text>
+        <View style={{backgroundColor:'#FFFFFF', height:height}}>
+            <Text>Confirm Screen</Text>
+            <Button title={'Finalizar'} onPress={()=>{navigation.navigate('Thanks')}}/>
         </View>
     );
 }
+

@@ -4,14 +4,14 @@ import { Button } from 'react-native-elements';
 
 var { height, width } = Dimensions.get('window');
 
-export default function ThanksScreen({navigation}){
+export default function CanceledScreen({navigation}){
     return(
         <View style={{backgroundColor:'#FFFFFF', height:height}}>
         <View style={{backgroundColor:'#FFFFFF', padding:30, alignItems:''}}>
             <Text style={{fontFamily:'roboto-light',fontSize:37, color:'#8F8F8F'}}>Compra</Text>
         </View>
         <View style={{alignItems:'center'}}>
-            <Image source={require('../../assets/images/pedido_aceptado.png')} ></Image>
+            <Image source={require('../../assets/images/pedido_cancelado.png')} ></Image>
             <View style={{alignItems:'center', height:height*0.25, justifyContent:'space-around'}}>
                 <Text style={[styles.text, {fontSize:16}]}>Pedido # 1234</Text>
                 <Text style={[styles.text,{fontFamily:'roboto-regular',fontSize:32}]}>¡Pedido Creado!</Text>

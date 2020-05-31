@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements';
 
 var { height, width } = Dimensions.get('window');
 
-export default function ThanksScreen({navigation}){
+export default function ConfirmedScreen({navigation}){
     return(
         <View style={{backgroundColor:'#FFFFFF', height:height}}>
         <View style={{backgroundColor:'#FFFFFF', padding:30, alignItems:''}}>

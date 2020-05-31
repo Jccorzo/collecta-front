@@ -1,15 +1,15 @@
-import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import * as React from 'react';
 import { FontAwesome } from '@expo/vector-icons'; 
 import TabBarIcon from '../../components/TabBarIcon';
 import PageInProgress from '../../screens/PageInProgress';
 import Colors from '../../constants/Colors';
-import BuyStackNavigator from './BuyStackNavigator';
+import AcceptOrderStackNavigator from '../association/AcceptOrderStackNavigator';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
 
-export default function BuyerBottomTabNavigator() {
+export default function AssociationBottomTabNavigator() {
 
   return (
     <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME} 
@@ -30,7 +30,7 @@ export default function BuyerBottomTabNavigator() {
 
       <BottomTab.Screen
         name="Home"
-        component={BuyStackNavigator}
+        component={AcceptOrderStackNavigator}
         options={{
           tabBarIcon: () => <TabBarIcon name="ios-home" />,
         }}

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { View , Text, StyleSheet, Dimensions, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { FontAwesome5 } from '@expo/vector-icons'; 
-
+import TouchableText from '../components/TouchableText';
 
 var { height, width } = Dimensions.get('window');
 
@@ -47,7 +47,51 @@ function BoughtProduct({order}){
     );
 }
 
-export {ProductToBuy, BoughtProduct};
+function AcceptedOrder({order}){
+    return(
+        <View style={productToBuyStyles.container}>
+            <Image
+                    style={{ borderRadius:10 }}
+                    source={order.image}
+                />
+            <View style={{justifyContent:'space-around', marginLeft:5}}>
+                    <Text style={[productToBuyStyles.text,{fontSize:10}]}>Pedido # {order.id}</Text>
+                    <Text style={[productToBuyStyles.text,{fontFamily:'roboto-black', fontSize:16}]}>{order.productName}</Text>
+                    <View style={{flexDirection:'row', alignItems:'center'}}>
+                        <FontAwesome5 name="calendar-alt" size={20} color="#FFBB00"/>
+                        <Text style={[productToBuyStyles.text,{marginLeft:8}]}>{order.date}</Text>
+                    </View>
+                    <View style={{flexDirection:'row', alignItems:'center'}}>
+                        <FontAwesome5 name="store" size={16} color="#FFBB00"/>
+                        <Text style={[productToBuyStyles.text,{marginLeft:8}]}>{order.clientName}</Text>
+                    </View>
+                    <TouchableText text={'Mas información'} textStyle={{color:"#FFBB00"}} containerStyle={{borderBottomWidth:1, borderBottomColor:'#FFBB00'}}/>
+            </View> 
+        </View>
+    );
+}
+
+function NewOrder({order, func}){
+    return(
+        <View style={productToBuyStyles.container}>
+            <Image
+                    style={{ borderRadius:10 }}
+                    source={order.image}
+                />
+            <View style={{justifyContent:'space-around', marginLeft:5}}>
+                    <Text style={[productToBuyStyles.text,{fontFamily:'roboto-black', fontSize:16}]}>{order.productName}</Text>
+                    <Text style={productToBuyStyles.text}>{`${order.cuantity}  ${order.unit}`}</Text>
+                    <View style={{flexDirection:'row', alignItems:'center'}}>
+                        <FontAwesome5 name="calendar-alt" size={20} color="#FFBB00"/>
+                        <Text style={[productToBuyStyles.text,{marginLeft:8}]}>{order.date}</Text>
+                    </View>
+                    <TouchableText func={func} text={'Mas información'} textStyle={{color:"#FFBB00"}} containerStyle={{borderBottomWidth:1, borderBottomColor:'#FFBB00'}}/>
+            </View> 
+        </View>
+    );
+}
+
+export {ProductToBuy, BoughtProduct, NewOrder, AcceptedOrder};
 
 const styles = StyleSheet.create({
     container: {
@@ -62,7 +106,7 @@ const styles = StyleSheet.create({
             height: 3,
         },
         shadowOpacity: 0.5,
-        elevation: 9,
+        elevation: 5,
         alignItems: 'stretch',
         padding: 5        
     },
@@ -95,7 +139,7 @@ const productToBuyStyles = StyleSheet.create({
             height: 3,
         },
         shadowOpacity: 0.5,
-        elevation: 9,
+        elevation: 5,
         flexDirection:"row", 
         padding:8, 
         width: width*.8, 
