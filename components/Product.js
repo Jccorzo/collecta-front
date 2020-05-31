@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { View , Text, StyleSheet, Dimensions, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { FontAwesome5 } from '@expo/vector-icons'; 
 
 
 var { height, width } = Dimensions.get('window');
@@ -10,10 +11,9 @@ function ProductToBuy({product, func}) {
     return (
         <TouchableOpacity onPress={func}>
         <View style={styles.container}>
-            <View style={{alignItems: 'center', marginBottom: 10, marginTop: 20}}>
+            <View style={{alignItems: 'center', padding:5}}>
                 <Image
-                    style={{ borderTopRightRadius:20, borderBottomRightRadius:20,
-                    borderTopLeftRadius:20, borderBottomLeftRadius:20 }}
+                    style={{ borderRadius:10}}
                     source={product.url}
                 /> 
             </View>
@@ -27,10 +27,22 @@ function ProductToBuy({product, func}) {
     );
 }
 
-function BoughtProduct(){
+function BoughtProduct({order}){
     return(
-        <View>
-            <Text>hola</Text>
+        <View style={productToBuyStyles.container}>
+            <Image
+                    style={{ borderRadius:10 }}
+                    source={order.image}
+                />
+            <View style={{justifyContent:'space-around'}}>
+                    <Text style={[productToBuyStyles.text,{fontSize:10}]}>Pedido # {order.id}</Text>
+                    <Text style={[productToBuyStyles.text,{fontFamily:'roboto-black', fontSize:16}]}>{order.productName}</Text>
+                    <Text style={productToBuyStyles.text}>{`${order.cuantity}  ${order.unit}`}</Text>
+                    <View style={{flexDirection:'row', alignItems:'center'}}>
+                        <FontAwesome5 name="calendar-alt" size={20} color="#FFBB00"/>
+                        <Text style={productToBuyStyles.text}>{order.date}</Text>
+                    </View>
+            </View> 
         </View>
     );
 }
@@ -42,21 +54,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         borderRadius: 20,
         minHeight: 82,
-        borderWidth: 1,
-        borderColor: '#00000029',
-        width: width * 0.45,
+        width: width * 0.42,
         margin: 10,
         shadowColor: "#00000029",
         shadowOffset: {
             width: 0,
             height: 3,
         },
-        shadowOpacity: 1,
+        shadowOpacity: 0.5,
         elevation: 9,
         alignItems: 'stretch',
-        padding: 5
-        //height: width * 0.5,
-        
+        padding: 5        
     },
     columnItems: {
         padding: 10,
@@ -77,4 +85,28 @@ const styles = StyleSheet.create({
         color: '#FFBB00',
     },
    
+})
+
+const productToBuyStyles = StyleSheet.create({
+    container:{
+        shadowColor: "#00000029",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.5,
+        elevation: 9,
+        flexDirection:"row", 
+        padding:8, 
+        width: width*.8, 
+        justifyContent:'space-evenly',
+        backgroundColor: '#FFFFFF',
+        borderRadius: 20,
+        marginBottom:10
+    },
+    text:{
+        fontFamily:'roboto-regular',
+        fontSize:14,
+        color:'#8F8F8F'
+    }
 })
