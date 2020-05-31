@@ -1,27 +1,29 @@
 import * as React from 'react';
 
 import { View , Text, StyleSheet, Dimensions, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 var { height, width } = Dimensions.get('window');
 
-export default function Product({product}) {
-
+export default function Product({product, func}) {
     return (
+        <TouchableOpacity onPress={func}>
         <View style={styles.container}>
             <View style={{alignItems: 'center', marginBottom: 10, marginTop: 20}}>
                 <Image
                     style={{ borderTopRightRadius:20, borderBottomRightRadius:20,
                     borderTopLeftRadius:20, borderBottomLeftRadius:20 }}
-                    source={require()}
+                    source={product.url}
                 /> 
             </View>
            <View style={styles.columnItems}>     
              <Text style={styles.title}>{product.name}</Text>
-             <Text style={styles.text} >{product.quantity}</Text>
+             <Text style={styles.text} >{product.price}</Text>
              <Text style={styles.light}>{product.info}</Text>     
            </View>
         </View>
+        </TouchableOpacity>
     );
 }
 
@@ -43,8 +45,6 @@ const styles = StyleSheet.create({
         elevation: 9,
         alignItems: 'stretch',
         padding: 5
-        //height: width * 0.5,
-        
     },
     columnItems: {
         padding: 10,
