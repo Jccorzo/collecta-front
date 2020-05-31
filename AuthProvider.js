@@ -66,7 +66,7 @@ export default function AuthProvider(props){
             // After getting token, we need to persist the token using `AsyncStorage`
             // In the example, we'll use a dummy token
             console.log(username,password);
-            dispatch({ type: 'SIGN_IN', token: 'dummy-auth-token', userInfo:{id:'id1',rol:'association'} });
+            dispatch({ type: 'SIGN_IN', token: 'dummy-auth-token', userInfo:{id:'id1',rol:'associate'} });
           },
           signOut: () => dispatch({ type: 'SIGN_OUT' }),
           signUp: async (name, password, navigation) => {
