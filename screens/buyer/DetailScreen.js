@@ -25,21 +25,25 @@ let unitList = [
 
 export default function DetailScreen({ route, navigation }) {
 
+    
+
     const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 
     const [visible, setVisible] = React.useState(false);
 
     const [unit, setUnit] = useState('');
 
-    const [name, setName] = useState('');
+    const [cuantity, setCuantity] = useState('');
 
-    const [textDescription, setDescription] = useState('');
+    const [observations, setObservations] = useState('');
 
     const [date, setDate] = useState(null);
 
     const [showCalendar, setShowCalendar] = useState(false);
 
     const [editable, setEditable] = useState(true);
+
+    const [ order, setOrder ] = useState({});
 
 
     const selectUnit = (Unit) => {
@@ -61,6 +65,11 @@ export default function DetailScreen({ route, navigation }) {
         setEditable(false);
     };
 
+    const fillOrderObject = () => {
+        setOrder({...order,...route.params.urlGrande,...route.params.name,...route.params.price,...route.params.unit,cuantity,date,observations});
+        navigation.navigate('ConfirmBuy', order)
+    };
+
     return (
 
         <ScrollView contentContainerStyle={{ justifyContent: 'space-between', }}>
@@ -77,10 +86,10 @@ export default function DetailScreen({ route, navigation }) {
                 <View style={styles.form}>
                     <Text style={[styles.list, { marginTop: 14 }]}>Cantidad</Text>
                     <TextInput
-                        value={name}
+                        value={cuantity}
                         style={styles.input}
                         returnKeyType={'next'}
-                        onChangeText={setName}
+                        onChangeText={setCuantity}
                         autoFocus={true}
                     />
                     <Text style={styles.list}>Unidad de medida</Text>
@@ -107,14 +116,14 @@ export default function DetailScreen({ route, navigation }) {
                         Observaciones
                     </Text>
                     <TextInput
-                        value={textDescription}
+                        value={observations}
                         style={[styles.input, { height: 137 }]}
                         returnKeyType={'next'}
-                        onChangeText={setDescription}
+                        onChangeText={setObservations}
                         autoFocus={true}
                         multiline={true}
                     />
-                    <Button buttonStyle={styles.button} title="Comprar" titleStyle={{fontFamily: 'roboto-regular', fontSize: 24 }} onPress={() => { navigation.navigate('ConfirmBuy') }} />
+                    <Button buttonStyle={styles.button} title="Comprar" titleStyle={{fontFamily: 'roboto-regular', fontSize: 24 }} onPress={() => { fillOrderObject() }} />
                 </View>
             </View>
         </ScrollView>

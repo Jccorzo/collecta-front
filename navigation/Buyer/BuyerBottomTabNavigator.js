@@ -5,6 +5,7 @@ import TabBarIcon from '../../components/TabBarIcon';
 import PageInProgress from '../../screens/PageInProgress';
 import Colors from '../../constants/Colors';
 import BuyStackNavigator from './BuyStackNavigator';
+import {Image } from 'react-native';
 
 const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'Home';
