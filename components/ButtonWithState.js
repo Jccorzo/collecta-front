@@ -2,12 +2,12 @@ import React from 'react';
 import {Button} from 'react-native-elements';
 import { StyleSheet } from 'react-native';
 
-export default function ButtonWithState({title, func, disabled}){
+export default function ButtonWithState({title, func, disabled, style}){
     return(
         <Button
             title={title}
             onPress={func}
-            buttonStyle={styles.mainButton}
+            buttonStyle={[styles.mainButton, style]}
             disabledStyle={{ backgroundColor: "#6E6E6E" }}
             titleStyle={{fontFamily: 'roboto-regular'}}
             disabledTitleStyle={{ color: '#FFFFFF' }}

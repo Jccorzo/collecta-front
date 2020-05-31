@@ -9,7 +9,7 @@ import ThanksScreen from '../../screens/buyer/ThanksScreen'
 
 const Stack = createStackNavigator();
 
-export default function BuyNavigator(){
+export default function BuyStackNavigator(){
 
     return(
         <Stack.Navigator screenOptions={{headerShown:false}}> 
