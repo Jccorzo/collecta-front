@@ -44,9 +44,13 @@ export default function HomeScreen({navigation}) {
       price: 3500,
       cuantity: 288,
       unit: 'Kilogramo',
+      units: 'Kilogramos',
       image: require('../../assets/images/Mango.png'),
       date: '15 Jul 2020',
-      total: 150000
+      total: 150000,
+      clientName: 'Santiago Rendón',
+      deliverySite: 'Unidad agricola La Ceja',
+      observations:'Por favor entregarlas antes de las 12 del día. En la tarde no estaremos atendiendo'
     },
     {
       id: '2',

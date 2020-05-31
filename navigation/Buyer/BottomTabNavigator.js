@@ -32,28 +32,28 @@ export default function BuyerBottomTabNavigator() {
         name="Home"
         component={BuyStackNavigator}
         options={{
-          tabBarIcon: () => <TabBarIcon name="ios-home" />,
+          tabBarIcon: ( {focused} ) => focused ? <Image source={require('../../assets/images/home_selected.png')} style={{height:30,width:30}} /> :<TabBarIcon name="ios-home" />,
         }}
       />
       <BottomTab.Screen
         name="Profile"
         component={PageInProgress}
         options={{
-          tabBarIcon: () => <TabBarIcon name="md-person" />,
+          tabBarIcon: ({focused}) => focused ? <Image source={require('../../assets/images/profile_selected.png')} style={{height:30,width:30}} />: <TabBarIcon name="md-person" />,
         }}
       />
       <BottomTab.Screen
         name="History"
         component={PageInProgress}
         options={{
-          tabBarIcon: () => <FontAwesome name="history" size={25} color={Colors.tabIconDefault} />,
+          tabBarIcon: ({focused}) => focused ? <Image source={require('../../assets/images/history_selected.png')} style={{height:30,width:30}} />: <FontAwesome name="history" size={25} color={Colors.tabIconDefault} />,
         }}
       />
       <BottomTab.Screen
         name="Configuration"
         component={PageInProgress}
         options={{
-          tabBarIcon: () => <TabBarIcon name="md-settings" />,
+          tabBarIcon: ({focused}) => focused ? <Image source={require('../../assets/images/configuration_selected.png')} style={{height:30,width:30}} />: <TabBarIcon name="md-settings" />,
         }}
       />
 
