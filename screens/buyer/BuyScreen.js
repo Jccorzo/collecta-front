@@ -9,6 +9,7 @@ export default function BuyScreen({navigation}){
           price: 5000,
           unit: 'Kilogramo',
           url: require('../../assets/images/Mango.png'),
+          urlGrande: require('../../assets/images/Mango_grande2x.png'),
           info: 'Nuevo producto',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris irure dolor in reprehenderit in voluptate velit esse'
         },
@@ -18,6 +19,7 @@ export default function BuyScreen({navigation}){
           price: 3500,
           unit: 'Kilogramo',
           url: require('../../assets/images/Mora.png'),
+          urlGrande: require('../../assets/images/Mora_grande2x.png'),
           info: 'antes $4.000 x Kilo',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris irure dolor in reprehenderit in voluptate velit esse'
         },
@@ -27,6 +29,7 @@ export default function BuyScreen({navigation}){
           price: 5000,
           unit: 'Kilogramo',
           url: require('../../assets/images/Manzana.png'),
+          urlGrande: require('../../assets/images/Manzana_grande2x.png'),
           info: 'antes $7.500 x Kilo',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris irure dolor in reprehenderit in voluptate velit esse'
         },
@@ -36,6 +39,7 @@ export default function BuyScreen({navigation}){
           price: 5000,
           unit: 'Kilogramo',
           url: require('../../assets/images/Manzana.png'),
+          urlGrande: require('../../assets/images/Manzana_grande2x.png'),
           info: 'antes $9.500 x Kilo',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris irure dolor in reprehenderit in voluptate velit esse'
         }
