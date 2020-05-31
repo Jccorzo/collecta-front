@@ -43,8 +43,7 @@ export default function DetailScreen({ route, navigation }) {
 
     const [editable, setEditable] = useState(true);
 
-    const [ order, setOrder ] = useState({});
-
+    let order = {};
 
     const selectUnit = (Unit) => {
         setUnit(Unit.title);
@@ -61,12 +60,8 @@ export default function DetailScreen({ route, navigation }) {
         setShowCalendar(!showCalendar);
     };
 
-    const showT = () => {
-        setEditable(false);
-    };
-
     const fillOrderObject = () => {
-        setOrder({...order,...route.params.urlGrande,...route.params.name,...route.params.price,...route.params.unit,cuantity,date,observations});
+      order =  {...order,cuantity,date,observations,route};
         navigation.navigate('ConfirmBuy', order)
     };
 
@@ -88,6 +83,7 @@ export default function DetailScreen({ route, navigation }) {
                     <TextInput
                         value={cuantity}
                         style={styles.input}
+                        keyboardType={'numeric'}
                         returnKeyType={'next'}
                         onChangeText={setCuantity}
                         autoFocus={true}

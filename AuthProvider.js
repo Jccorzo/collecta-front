@@ -67,7 +67,7 @@ export default function AuthProvider(props){
             // We will also need to handle errors if sign in failed
             // After getting token, we need to persist the token using `AsyncStorage`
             // In the example, we'll use a dummy token
-            let user = {id:'id1',rol:'associate'};
+            let user = {id:'id1',rol:'buyer',adress:'Calle San Juan'};
             socket.emit('login',user)
             console.log(username,password);
             dispatch({ type: 'SIGN_IN', token: 'dummy-auth-token', userInfo:user });
