@@ -58,7 +58,8 @@ const buttonStyles = StyleSheet.create({
     text:{
         color:'#707070',
         fontFamily:'roboto-regular',
-        fontSize:16
+        fontSize:10,
+       
     },
     row:{
         flexDirection: 'row',

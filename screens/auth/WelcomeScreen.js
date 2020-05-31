@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { View, StyleSheet, Dimensions, Image } from 'react-native';
 import { Button, Text } from 'react-native-elements';
 
 var { height } = Dimensions.get('window');
@@ -10,6 +10,8 @@ var box_height = height / box_count;
 export default function WelcomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
+      <Image source={require('../../assets/images/NewCanvas1.png')}  style={{width:300, height:200, marginBottom: 40}}>
+      </Image>
       <Text style={styles.text}>Te damos la bienvenida</Text>
       <View style={styles.box}>
         <Button

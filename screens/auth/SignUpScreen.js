@@ -72,7 +72,9 @@ export default function SignUpScreen ({ navigation }){
                       style={{width:175, height:105}}
                       
                       />
-                      <Text style={{fontSize:24, color: '#707070', bottom: 20, fontFamily: 'roboto-regular'}}>Registro</Text>
+                      <Text style={{fontSize:30, color: '#FFBB00', fontFamily: 'roboto-bold'}}>Crear cuenta</Text>
+                      <Text style={{fontSize:18, color: '#959595', bottom: 30, fontFamily: 'roboto-regular'}}>Es hora de iniciar tu cosecha</Text>
+                     
                   </View>
                   <View style={styles.inputBox}> 
                     <TextInput
@@ -173,7 +175,7 @@ export default function SignUpScreen ({ navigation }){
           padding:18,
           borderWidth: 1,
           borderColor: '#00000029',
-          fontSize: 16,
+          fontSize: 13,
           fontFamily: 'roboto-regular',
           color:'#FFBB00',
           zIndex:-1

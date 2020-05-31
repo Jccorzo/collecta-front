@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         borderWidth: 0.5,
-        fontSize: 12,
+        fontSize: 10,
         borderColor: '#00000029',
         padding: 18,
         borderRadius: 30,

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
-import { ScrollView , View, Image, TextInput, StyleSheet, Dimensions, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { ScrollView , View, Image, TextInput, StyleSheet, Dimensions, TouchableWithoutFeedback, Keyboard, ImageBackground } from 'react-native';
 import { AuthContext } from '../../AuthProvider';
 import { Text } from 'react-native-elements';
 import TouchableText from '../../components/TouchableText';
@@ -49,13 +49,14 @@ export default function SignInScreen() {
   const focusSecondTextInput = () => secondTextInputRef.current.focus();
 
   return (
+    <ImageBackground source={require('../../assets/images/fondo_transparente2x.png')} style={{width: '100%', height: '100%'}} resizeMode='cover' >
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ScrollView style={styles.container} contentContainerStyle={{alignItems: 'center', justifyContent: 'space-between'}}>
-        <View style={[styles.box, {height:height*0.4, justifyContent:'space-evenly', alignItems: 'center'}]}>
-          <Image
-            style={{ width: 175, height: 105 }}
+        <View style={[styles.box, {height:height*0.4, justifyContent:'space-around', alignItems: 'center'}]}>
+          <Image source={require('../../assets/images/mango2x.png')}
+            style={{ width: 175, height: 200, marginTop: 30 }}
           />
-          <Text style={styles.text}>Bienvenidos</Text>
+          <Text style={styles.text}>Bienvenidos a Collecta</Text>
         </View>
         <View style={styles.box}>
          
@@ -82,15 +83,17 @@ export default function SignInScreen() {
               onFocus={() => setFocusP(true)}
               onBlur={() => setFocusP(false)}
             />
-          
 
+            
         </View>
         <TouchableText textStyle={styles.passButton} text={'Olvidaste tu contraseña'}/>
         <View style={styles.box}>
-          <ButtonWithState func={() => context.authContext.signIn(username, password)} title={'Ingresar'} disabled={disabled}/>
+          <ButtonWithState style={styles.button} func={() => context.authContext.signIn(username, password)} title={'Ingresar'} disabled={disabled}/>
         </View>
+
       </ScrollView>
     </TouchableWithoutFeedback>
+    </ImageBackground>
   );
 }
 
@@ -98,7 +101,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#FFFFFF',
-    height: height
+    height: height,
+    
+  },
+  button: {
+        width: 264,
+        height: 48,
+        backgroundColor: "#FFBB00",
+        borderRadius: 30,
   },
   box: {
     height: height*0.3,
