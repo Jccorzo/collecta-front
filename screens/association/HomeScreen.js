@@ -2,6 +2,8 @@ import * as React from 'react';
 import { StyleSheet, FlatList, Text, View, ScrollView } from 'react-native';
 import { NewOrder, AcceptedOrder } from '../../components/Product';
 import { Button } from 'react-native-elements';
+import {AuthContext} from '../../AuthProvider';
+
 
 export default function HomeScreen({navigation}) {
   const [showNewOrders, setShowNewOrders] = React.useState(true)
@@ -77,7 +79,7 @@ export default function HomeScreen({navigation}) {
       date: '15 Jul 2020'
     }
   ]
-
+  const context = React.useContext(AuthContext);
   return (
     <>
     <View style={{backgroundColor:'#FFFFFF', padding:30}}>

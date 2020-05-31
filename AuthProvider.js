@@ -1,6 +1,9 @@
 import React, {createContext} from 'react';
+import io from 'socket.io-client';
 
 export const AuthContext = createContext();
+
+const socket = io('http://192.168.43.198:3000/socket');
 
 export default function AuthProvider(props){
     
@@ -49,7 +52,6 @@ export default function AuthProvider(props){
           }
     
           // After restoring token, we may need to validate it in production apps
-    
           // This will switch to the App screen or Auth screen and this loading
           // screen will be unmounted and thrown away.
           dispatch({ type: 'RESTORE_TOKEN', token: userToken });
@@ -65,8 +67,10 @@ export default function AuthProvider(props){
             // We will also need to handle errors if sign in failed
             // After getting token, we need to persist the token using `AsyncStorage`
             // In the example, we'll use a dummy token
+            let user = {id:'id1',rol:'associate'};
+            socket.emit('login',user)
             console.log(username,password);
-            dispatch({ type: 'SIGN_IN', token: 'dummy-auth-token', userInfo:{id:'id1',rol:'associate'} });
+            dispatch({ type: 'SIGN_IN', token: 'dummy-auth-token', userInfo:user });
           },
           signOut: () => dispatch({ type: 'SIGN_OUT' }),
           signUp: async (name, password, navigation) => {
@@ -86,7 +90,7 @@ export default function AuthProvider(props){
       );
          
       return(
-          <AuthContext.Provider value={{state, authContext}}>
+          <AuthContext.Provider value={{state, authContext, socket}}>
             {props.children}
           </AuthContext.Provider>
       );

@@ -7,7 +7,6 @@ import {AuthContext} from '../../AuthProvider';
 export default function HomeScreen({navigation}) {
 
   const context = React.useContext(AuthContext);
-  (function (){console.log(context)})()
   let orders=[
     {
       id: '1',

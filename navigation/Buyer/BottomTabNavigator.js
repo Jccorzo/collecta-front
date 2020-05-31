@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome } from '@expo/vector-icons'; 
+import { Image } from 'react-native';
 import TabBarIcon from '../../components/TabBarIcon';
 import PageInProgress from '../../screens/PageInProgress';
 import Colors from '../../constants/Colors';
