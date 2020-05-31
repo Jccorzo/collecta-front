@@ -1,0 +1,10 @@
+{
+	"auth": {
+		"collectafront3ecd8b07": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false
+		}
+	}
+}
