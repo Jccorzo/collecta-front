@@ -91,18 +91,20 @@ export default function DetailScreen({ route, navigation }) {
                         <DropdownButton func={() => { setVisible(true) }} text={unit} styles={styles.row}></DropdownButton>
                         <DropdownList visible={visible} data={unitList} func={(Unit) => { selectUnit(Unit) }}></DropdownList>
                     </View>
-                    <Text style={[styles.list, { marginTop: 34 }]}>Fecha de entrega</Text>
-                    <TouchableOpacity onPress={showD} >
+                    <View style={{zIndex:-1}}>
+                    <Text style={[styles.list, { marginTop: 34 , zIndex:-1}]}>Fecha de entrega</Text>
+                    <TouchableOpacity onPress={showD} style={{zIndex:-1}} >
                         <Input
                             rightIcon={{ type: 'feather', name: 'calendar', color: '#00000029', size: 20 }}
-                            inputContainerStyle={{ borderColor: '#00000029' }}
+                            inputContainerStyle={{ borderColor: '#00000029', zIndex:-1}}
                             inputStyle={{ fontFamily: 'roboto-regular', fontSize: 16, marginLeft: 5, color: '#707070', width: 350 }}
-                            containerStyle={{ width: width * .6, marginBottom: 15 }}
+                            containerStyle={{ width: width * .6, marginBottom: 15, zIndex:-1}}
                             value={(date == null) ? null : `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`}
                             onFocus={showD}
                             editable={editable}
                         />
                     </TouchableOpacity>
+                    </View>
                     <View style={{ alignItems: 'center' }}>
                         {showCalendar ? <Calendario datePassed={setDate} /> : null}
                     </View>
