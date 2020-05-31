@@ -6,7 +6,17 @@ import {AuthContext} from '../../AuthProvider';
 
 
 export default function HomeScreen({navigation}) {
+  const context = React.useContext(AuthContext);
   const [showNewOrders, setShowNewOrders] = React.useState(true)
+
+  const [newOrderss, setNewOrders] = React.useState([]);
+  
+  (function(){console.log(context.state.userInfo.rol)})()
+
+  context.socket.on('newOrder',(order)=>{
+    console.log(order);
+  })
+
 
   let acceptedOrders=[
     {
@@ -79,7 +89,7 @@ export default function HomeScreen({navigation}) {
       date: '15 Jul 2020'
     }
   ]
-  const context = React.useContext(AuthContext);
+  
   return (
     <>
     <View style={{backgroundColor:'#FFFFFF', padding:30}}>

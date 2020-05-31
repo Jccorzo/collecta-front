@@ -5,7 +5,6 @@ import Calendario from '../../components/Calendario';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { Input, Button } from 'react-native-elements';
 
-
 var { height, width } = Dimensions.get('window');
 
 let unitList = [
@@ -25,7 +24,6 @@ let unitList = [
 
 export default function DetailScreen({ route, navigation }) {
 
-    
 
     const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
 

@@ -63,21 +63,27 @@ export default function AuthProvider(props){
       const authContext = React.useMemo(
         () => ({
           signIn: async (username, password) => {
-            // In a production app, we need to send some data (usually username, password) to server and get a token
-            // We will also need to handle errors if sign in failed
-            // After getting token, we need to persist the token using `AsyncStorage`
-            // In the example, we'll use a dummy token
-            let user = {id:'id1',rol:'buyer',adress:'Calle San Juan'};
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            
+            var raw = JSON.stringify({"email":username,"password":password});
+            
+            var requestOptions = {
+              method: 'POST',
+              headers: myHeaders,
+              body: raw,
+              redirect: 'follow'
+            };
+            
+            let response = await fetch("http://localhost:3000/login",requestOptions);
+            let user = await response.json();
+            console.log(user);
             socket.emit('login',user)
             console.log(username,password);
             dispatch({ type: 'SIGN_IN', token: 'dummy-auth-token', userInfo:user });
           },
           signOut: () => dispatch({ type: 'SIGN_OUT' }),
           signUp: async (name, password, navigation) => {
-            // In a production app, we need to send user data to server and get a token
-            // We will also need to handle errors if sign up failed
-            // After getting token, we need to persist the token using `AsyncStorage`
-            // In the example, we'll use a dummy token
             console.log(name,password);
             navigation.navigate('ConfirmCode');
             

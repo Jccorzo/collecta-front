@@ -21,8 +21,8 @@ export default function ConfirmScreen({route,navigation}){
 
     const sendOrder = ()=>{
         order = {...order,total,productId,date,observations};
+        context.socket.emit('shoping',order);
         navigation.navigate('Thanks');
-        console.log(order);
     }
 
     return(

@@ -87,7 +87,7 @@ export default function SignInScreen() {
         </View>
         <TouchableText textStyle={styles.passButton} text={'Olvidaste tu contraseña'}/>
         <View style={styles.box}>
-          <ButtonWithState func={() => context.authContext.signIn(username, password)} title={'Ingresar'} disabled={disabled}/>
+          <ButtonWithState func={() => {(async function(){ await context.authContext.signIn(username, password)})()}} title={'Ingresar'} disabled={disabled}/>
         </View>
       </ScrollView>
     </TouchableWithoutFeedback>
